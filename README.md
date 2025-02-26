@@ -1,3 +1,3 @@
 # RGrasslandTraitSim
 
-An R-package to wrap the GrasslandTraitSim.jl
+An R-package to wrap the GrasslandTraitSim.jl simulation model.
