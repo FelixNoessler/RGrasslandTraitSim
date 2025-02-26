@@ -1,0 +1,48 @@
+---
+format: html
+---
+
+## Load GrasslandTraitSim
+
+```{r, message=FALSE}
+library(dplyr)
+library(ggplot2)
+
+# install with devtools::install_github("FelixNoessler/RGrasslandTraitSim")
+library(RGrasslandTraitSim)
+
+## Initialisation: Install Julia and GrasslandTraitSim.jl on first run
+GrasslandTraitSim_init()
+```
+
+## Get and change model parameter
+```{r}
+### without chaninging parameter values:
+# GrasslandTraitSim_parameter()
+
+### Change some parameter
+p <- c("α_SEN" = 0.02, "η_GRZ" = 2.5, "ψ_SEN_ST2" = 3200.0)
+p
+
+p_obj <- GrasslandTraitSim_parameter(p)
+p_obj
+```
+
+## Run simulation
+```{r}
+sol_obj <- GrasslandTraitSim_solve(p = p_obj, plotID = "HEG37")
+```
+
+## Analyse results
+```{r}
+total_biomass <- GrasslandTraitSim_getdata(sol_obj$output$biomass)
+above_biomass <- GrasslandTraitSim_getdata(sol_obj$output$above_biomass)
+
+df <- tibble(above_biomass = rowSums(above_biomass), 
+             d = sol_obj$simp$output_date)
+
+ggplot(df, aes(d, above_biomass)) +
+  geom_line() +
+  labs(y = "Total aboveground biomass [kg ha⁻¹]",
+       x = "Date [year]")
+```
