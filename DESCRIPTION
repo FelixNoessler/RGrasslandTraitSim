@@ -14,3 +14,7 @@ License: GPL-3
 Encoding: UTF-8
 LazyData: true
 URL: https://felixnoessler.github.io/RGrasslandTraitSim/
+RoxygenNote: 7.3.2
+VignetteBuilder: knitr
+Suggests: knitr, rmarkdown, dplyr, ggplot2
+Imports: JuliaCall

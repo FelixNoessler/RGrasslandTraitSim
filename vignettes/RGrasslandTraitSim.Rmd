@@ -1,6 +1,14 @@
 ---
-format: html
+title: "Get started"
+author: "Felix Nößler"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Get started}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
 ---
+
 
 ## Load GrasslandTraitSim
 
@@ -17,12 +25,11 @@ GrasslandTraitSim_init()
 
 ## Get and change model parameter
 ```{r}
-### without chaninging parameter values:
+### without changing parameter values:
 # GrasslandTraitSim_parameter()
 
-### Change some parameter
+### Change some parameters
 p <- c("α_SEN" = 0.02, "η_GRZ" = 2.5, "ψ_SEN_ST2" = 3200.0)
-p
 
 p_obj <- GrasslandTraitSim_parameter(p)
 p_obj

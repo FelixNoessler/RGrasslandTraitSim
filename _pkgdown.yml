@@ -1,5 +1,17 @@
 url: https://felixnoessler.github.io/RGrasslandTraitSim/
 template:
   bootstrap: 5
-home:
-  index: "vignettes/home.qmd"
+
+navbar:
+  title: RGrasslandTraitSim
+  type: default
+  left:
+  - icon: fa-home fa-lg
+    href: index.html
+  - text: Get Started
+    href: articles/RGrasslandTraitSim.html
+  - text: Reference
+    href: reference/index.html
+  right:
+  - text: Link to GrasslandTraitSim.jl
+    href: https://felixnoessler.github.io/GrasslandTraitSim.jl/dev/

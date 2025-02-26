@@ -10,7 +10,7 @@ GrasslandTraitSim_init <- function() {
   JuliaCall::julia_install_package_if_needed("Unitful")
   JuliaCall::julia_library("GrasslandTraitSim")
   JuliaCall::julia_library("Unitful")
-  JuliaCall::julia_source(here::here("R/wrapper.jl"))
+  JuliaCall::julia_source(system.file("julia/wrapper.jl", package = "RGrasslandTraitSim"))
 }
 
 
